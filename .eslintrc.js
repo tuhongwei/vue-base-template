@@ -28,7 +28,9 @@ module.exports = {
   rules: {
     indent: ["error", 2, { SwitchCase: 1 }],
     quotes: ["error", "single"],
+    // 要求每个块有多个声明
     semi: ["error", "always"],
+    "one-var": ["error", "never"],
     // 块语句前面加空格
     "space-before-blocks": ["warn", "always"],
     // 对象换行
