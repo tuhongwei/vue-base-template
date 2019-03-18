@@ -1,0 +1,42 @@
+stages:
+  - install
+  - test
+  - build
+  - deploy
+
+# 安装依赖
+install:
+  stage: install
+  only:
+    - dev
+    - master
+  script:
+    - npm install
+
+# 运行测试用例
+test:
+  stage: test
+  only:
+    - dev
+    - master
+  script:
+    - npm run test
+
+# 编译
+build:
+  stage: build
+  only:
+    - dev
+    - master
+  script:
+    - npm run clean
+    - npm run build
+
+# 部署服务器
+deploy:
+  stage: deploy
+  only:
+    - dev
+    - master
+  script:
+    - npm run deploy
