@@ -5,22 +5,22 @@ module.exports = {
   parserOptions: {
     parser: "babel-eslint",
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 6,
-    sourceType: "module"
+    sourceType: "module",
   },
   env: {
     browser: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
     "plugin:vue/essential",
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    "standard"
+    "standard",
   ],
   // required to lint *.vue files
   plugins: ["vue"],
@@ -34,12 +34,13 @@ module.exports = {
     "space-before-blocks": ["warn", "always"],
     // 对象换行
     "object-curly-newline": ["error", { multiline: true }],
+    "object-curly-spacing": ["error", "always"],
     "vue/jsx-uses-vars": 2,
     // allow async-await
     "generator-star-spacing": "off",
     // allow console during development
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
-  }
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+  },
 };
