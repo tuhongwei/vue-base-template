@@ -29,7 +29,6 @@
   "lint-staged": {
     "**/*.{js, jsx}": [
       "eslint --fix",
-      "prettier --write",
       "git add"
     ],
     "**/*.{ts, tsx}": [
@@ -141,5 +140,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+  ],
+  "keywords": [
+    "vue",
+    "eslint",
+    "element-ui",
+    "lint",
+    "standard",
+    "standard style",
+    "style",
+    "style linter"
   ]
 }
