@@ -68,8 +68,7 @@ const delCookie = name => {
   let exp = new Date();
   exp.setTime(exp.getTime() - 1);
   let val = getCookie(name);
-  val &&
-    (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
+  val && (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
 };
 
 const remTopx = remValue => {
