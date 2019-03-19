@@ -120,6 +120,7 @@
     "sinon": "^4.0.0",
     "sinon-chai": "^2.8.0",
     "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
     "tslint": "^5.14.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
