@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-const Index = () => import('@/pages/index');
-const ManageCenter = () => import('@/pages/ManageCenter');
+import Vue from "vue";
+import Router from "vue-router";
+const Index = () => import("@/pages/index");
+const ManageCenter = () => import("@/pages/ManageCenter");
 
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  scrollBehavior (to, from, savedPosition) {
+  mode: "history",
+  scrollBehavior(to, from, savedPosition) {
     return {
       x: 0,
       y: 0
@@ -15,20 +15,18 @@ export default new Router({
   },
   routes: [
     {
-      path: '/',
-      name: 'Index',
+      path: "/",
+      name: "Index",
       component: Index
     },
     {
-      path: '/index',
-      redirect: '/'
+      path: "/index",
+      redirect: "/"
     },
     {
-      path: '/manageCenter',
+      path: "/manageCenter",
       component: ManageCenter,
-      meta: {
-        requireAuth: true
-      }
+      meta: { requireAuth: true }
     }
   ]
 });
