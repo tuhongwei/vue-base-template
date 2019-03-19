@@ -30,11 +30,10 @@ module.exports = {
     quotes: ["error", "single"],
     // 要求每个块有多个声明
     semi: ["error", "always"],
-    "one-var": ["error", "never"],
     // 块语句前面加空格
     "space-before-blocks": ["warn", "always"],
     // 对象换行
-    "object-curly-newline": ["warn", "always"],
+    "object-curly-newline": ["error", { multiline: true }],
     "vue/jsx-uses-vars": 2,
     // allow async-await
     "generator-star-spacing": "off",
