@@ -20,8 +20,7 @@ router.beforeEach((to, from, next) => {
       store.commit('recordUserInfo', u);
       return;
     }
-    request
-      .post('/api/user/index')
+    request.post('/api/user/index')
       .then(res => {
         let u0 = res.data.info;
         let userInfo = JSON.stringify(u0);

@@ -13,7 +13,7 @@ const formatDate = date => {
 /**
  * 存储localStorage
  */
-const setStore = (name, content) => {
+const setLocalStorage = (name, content) => {
   if (!name) return;
   if (typeof content !== 'string') {
     content = JSON.stringify(content);
@@ -24,7 +24,7 @@ const setStore = (name, content) => {
 /**
  * 获取localStorage
  */
-const getStore = name => {
+const getLocalStorage = name => {
   if (!name) return;
   return localStorage.getItem(name);
 };
@@ -32,7 +32,7 @@ const getStore = name => {
 /**
  * 删除localStorage
  */
-const removeStore = name => {
+const removeLocalStorage = name => {
   if (!name) return;
   localStorage.removeItem(name);
 };
@@ -71,22 +71,17 @@ const delCookie = name => {
   val && (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
 };
 
-const remTopx = remValue => {
+const remTopx = value => {
   let fontSize = getComputedStyle(document.documentElement)['font-size'];
-  console.log(
-    '当前根目录fontsize:px -> :',
-    parseInt(fontSize),
-    '转化为rem:',
-    (parseInt(fontSize) * remValue) / 100
-  );
-  return (parseInt(fontSize) * remValue) / 100;
+  console.log('当前根元素font-size:px -> :', parseInt(fontSize), '转化后font-size:', (parseInt(fontSize) * value) / 100);
+  return (parseInt(fontSize) * value) / 100;
 };
 
 const model = {
   formatDate: formatDate,
-  setStore: setStore,
-  getStore: getStore,
-  removeStore: removeStore,
+  setLocalStorage: setLocalStorage,
+  getLocalStorage: getLocalStorage,
+  removeLocalStorage: removeLocalStorage,
   getCookie: getCookie,
   setCookie: setCookie,
   delCookie: delCookie,
