@@ -8,8 +8,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     login: false,
-    userInfo: {}
+    userInfo: {},
   },
   mutations,
-  actions
+  actions,
 });

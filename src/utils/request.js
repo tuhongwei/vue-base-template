@@ -5,7 +5,7 @@ import { Message } from "element-ui";
 
 const instance = axios.create({
   baseURL,
-  timeout: 5000
+  timeout: 5000,
 });
 
 // http请求拦截器

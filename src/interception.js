@@ -22,7 +22,7 @@ router.beforeEach((to, from, next) => {
     }
     request
       .post("/api/user/index")
-      .then(function(response) {
+      .then(response => {
         let u0 = response.data.info;
         let userInfo = JSON.stringify(u0);
         util.setCookie("userInfo", userInfo, expireDays);

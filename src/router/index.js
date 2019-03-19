@@ -10,23 +10,23 @@ export default new Router({
   scrollBehavior(to, from, savedPosition) {
     return {
       x: 0,
-      y: 0
+      y: 0,
     };
   },
   routes: [
     {
       path: "/",
       name: "Index",
-      component: Index
+      component: Index,
     },
     {
       path: "/index",
-      redirect: "/"
+      redirect: "/",
     },
     {
       path: "/manageCenter",
       component: ManageCenter,
-      meta: { requireAuth: true }
-    }
-  ]
+      meta: { requireAuth: true },
+    },
+  ],
 });

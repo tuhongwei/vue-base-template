@@ -92,7 +92,7 @@ const model = {
   getCookie: getCookie,
   setCookie: setCookie,
   delCookie: delCookie,
-  remTopx: remTopx
+  remTopx: remTopx,
 };
 
 export default model;
