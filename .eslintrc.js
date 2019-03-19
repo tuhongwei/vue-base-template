@@ -26,14 +26,17 @@ module.exports = {
   plugins: ["vue"],
   // add your custom rules here
   rules: {
+    // enforce consistent indentation, switch-case 1 space
     indent: ["error", 2, { SwitchCase: 1 }],
+    // enforce the consistent use of single quotes
     quotes: ["error", "single"],
-    // 要求每个块有多个声明
+    // require semicolons instead of ASI(automatic semicolon insertion)
     semi: ["error", "always"],
-    // 块语句前面加空格
+    // require space before blocks
     "space-before-blocks": ["warn", "always"],
-    // 对象换行
+    // enforce consistent line breaks inside braces
     "object-curly-newline": ["error", { multiline: true }],
+    // enforce consistent spacing inside braces
     "object-curly-spacing": ["error", "always"],
     "vue/jsx-uses-vars": 2,
     // allow async-await
