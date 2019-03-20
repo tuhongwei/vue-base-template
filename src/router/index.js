@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-const Index = () => import('@/pages/index');
-const ManageCenter = () => import('@/pages/ManageCenter');
+import ModuleRouters from './modules';
+import CommonRouters from './common';
 
 Vue.use(Router);
 
@@ -13,20 +13,5 @@ export default new Router({
       y: 0
     };
   },
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: Index
-    },
-    {
-      path: '/index',
-      redirect: '/'
-    },
-    {
-      path: '/manageCenter',
-      component: ManageCenter,
-      meta: { requireAuth: true }
-    }
-  ]
+  routes: [...ModuleRouters, ...CommonRouters]
 });
