@@ -1,4 +1,4 @@
-const Home = () => import('@/pages/Home')
+const Home = () => import('@/pages/Home');
 
 export default [
   {
@@ -6,4 +6,4 @@ export default [
     name: 'Home',
     component: Home
   }
-]
+];

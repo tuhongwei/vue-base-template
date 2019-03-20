@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
 const requireComponent = require.context('.', true, /\.(vue|js)$/);
 requireComponent.keys().forEach(fileName => {

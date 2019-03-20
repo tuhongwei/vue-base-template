@@ -1,6 +1,6 @@
-const NoPermission = () => import('@/pages/common/NoPermission')
-const NotFound = () => import('@/pages/common/404')
-const ServiceUnavailable = () => import('@/pages/common/ServiceUnavailable')
+const NoPermission = () => import('@/pages/common/NoPermission');
+const NotFound = () => import('@/pages/common/404');
+const ServiceUnavailable = () => import('@/pages/common/ServiceUnavailable');
 
 export default [
   {
@@ -26,4 +26,4 @@ export default [
     name: 'serviceUnavailable',
     component: ServiceUnavailable
   }
-]
+];

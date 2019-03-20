@@ -1,4 +1,4 @@
-const Login = () => import('@/pages/login/Login')
+const Login = () => import('@/pages/login/Login');
 
 export default [
   {
@@ -9,4 +9,4 @@ export default [
     icon: '', // 图标
     component: Login
   }
-]
+];

@@ -1,5 +1,5 @@
-const ManageCenter = () => import('@/pages/manageCenter/ManageCenter')
-const ManageCenterIndex = () => import('@/pages/manageCenter/Index')
+const ManageCenter = () => import('@/pages/manageCenter/ManageCenter');
+const ManageCenterIndex = () => import('@/pages/manageCenter/Index');
 
 export default [
   {
@@ -17,4 +17,4 @@ export default [
       }
     ]
   }
-]
+];
