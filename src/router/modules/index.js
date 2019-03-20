@@ -1,10 +1,10 @@
-const requireComponent = require.context('.', true, /\.js$/);
-console.log(requireComponent.keys());
+const requireRouters = require.context('.', true, /\.js$/);
+console.log(requireRouters.keys());
 let configRouters = [];
-requireComponent.keys().forEach(fileName => {
+requireRouters.keys().forEach(fileName => {
   if (fileName === './index.js') return;
-  // 获取组件配置
-  const componentConfig = requireComponent(fileName);
-  configRouters = configRouters.concat(componentConfig.default || componentConfig)
+  // 获取路由配置
+  const routerConfig = requireRouters(fileName);
+  configRouters = configRouters.concat(routerConfig.default || routerConfig)
 });
 export default configRouters;
