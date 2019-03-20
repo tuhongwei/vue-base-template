@@ -27,16 +27,16 @@
     }
   },
   "lint-staged": {
-    "**/*.{js, jsx}": [
+    "**/*.{vue, js, jsx}": [
       "eslint --fix",
       "git add"
     ],
-    "**/*.{ts, tsx}": [
+    "**/*.{vue, ts, tsx}": [
       "tslint --fix",
       "prettier --write",
       "git add"
     ],
-    "**/*.{css, less, sass, scss}": [
+    "**/*.{vue, css, less, sass, scss}": [
       "stylelint --fix",
       "prettier --write",
       "git add"
