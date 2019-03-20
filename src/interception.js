@@ -4,7 +4,6 @@ import cookie from './utils/cookie';
 import { loginURL, expireDays } from './config';
 import request from './utils/request';
 
-console.log('cookie', cookie);
 router.beforeEach((to, from, next) => {
   console.log(to.path, to.matched);
   if (to.matched.some(record => record.meta.requireAuth)) {
