@@ -1,19 +1,20 @@
 import router from './router';
 import store from './stores';
-import util from '@/utils';
-import { loginURL, expireDays } from '@/config';
-import request from '@/utils/request';
+import cookie from './utils/cookie';
+import { loginURL, expireDays } from './config';
+import request from './utils/request';
 
+console.log('cookie', cookie)
 router.beforeEach((to, from, next) => {
   console.log(to.path, to.matched);
   if (to.matched.some(record => record.meta.requireAuth)) {
     // 验证是否已经登录拦截
-    let token = util.getCookie('token');
+    let token = cookie.getCookie('token');
     if (!token) {
       location.href = loginURL;
       return;
     }
-    let userInfo = util.getCookie('userInfo');
+    let userInfo = cookie.getCookie('userInfo');
     if (userInfo) {
       console.log('userInfo===', userInfo);
       let u = JSON.parse(userInfo);
@@ -24,7 +25,7 @@ router.beforeEach((to, from, next) => {
       .then(res => {
         let u0 = res.data.info;
         let userInfo = JSON.stringify(u0);
-        util.setCookie('userInfo', userInfo, expireDays);
+        cookie.setCookie('userInfo', userInfo, expireDays);
         store.commit('recordUserInfo', u0);
       })
       .catch(err => {
