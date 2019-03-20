@@ -1,6 +1,13 @@
 /build/
 /config/
+/doc/
 /dist/
+/specs/
 /*.js
 /test/unit/coverage/
 /src/assets/css/reset.css
+/src/config/
+/src/mixins/
+/src/router/
+/src/stores/
+/src/utils/
