@@ -27,11 +27,11 @@ module.exports = {
   // add your custom rules here
   rules: {
     // enforce consistent indentation, switch-case 1 space
-    indent: ["error", 2, { SwitchCase: 1 }],
+    "indent": ["error", 2, { SwitchCase: 1 }],
     // enforce the consistent use of single quotes
-    quotes: ["error", "single"],
+    "quotes": ["error", "single"],
     // require semicolons instead of ASI(automatic semicolon insertion)
-    semi: ["error", "always"],
+    "semi": ["error", "always"],
     // require space before blocks
     "space-before-blocks": ["warn", "always"],
     // enforce consistent line breaks inside braces
