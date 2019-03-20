@@ -1,7 +1,8 @@
 # 介绍
 
 > 基于 vue2.6.9 + vue-router3.0.2 + vuex3.1.0 + webpack4.29.6
-> vue-base-template 是一个 vue 基础模板，任何使用 vue 开发的都可以以此为基础进行开发。它基于 UI 框架[element-ui](https://github.com/ElemeFE/element)
+> vue-base-template 是一个 vue 基础模板，任何使用 vue 开发的都可以以此为基础进行开发。它基于 UI 框架[element-ui](https://github.com/ElemeFE/element)。
+> 包含了工程项目中一系列流程：代码检查，构建，部署
 
 ## Build Setup
 
@@ -41,7 +42,7 @@ npm run changelog
 ## commitizen
 
 ```bash
-# 在工程目录，运行下面命令，使其支持 Angular 的 Commit message 格式（需全局安装commitizen），凡是用到git commit命令，一律改为使用git cz。这时，就会出现选项，用来生成符合格式的 Commit message
+# 在工程目录，运行下面命令，使其支持 Angular的Commit message格式（需全局安装commitizen），凡是用到git commit命令，一律改为使用git cz。这时，就会出现选项，用来生成符合格式的 Commit message
 npm run commitizen
 ```
 
@@ -81,12 +82,10 @@ css 单位使用 rem
 
 ## 更新日志
 
-[CHANGELOG.md](https://github.com/jsmini/clone/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/tuhongwei/vue-base-template/blob/master/CHANGELOG.md)
 
 ## 计划列表
 
-[TODO.md](https://github.com/jsmini/clone/blob/master/TODO.md)
+[TODO.md](https://github.com/tuhongwei/vue-base-template/blob/master/TODO.md)
 
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Detailed changes for each release are documented in the [release notes](https://github.com/tuhongwei/vue-base-template/releases).
