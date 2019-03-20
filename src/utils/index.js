@@ -37,40 +37,6 @@ const removeLocalStorage = name => {
   localStorage.removeItem(name);
 };
 
-// 获取cookie、
-const getCookie = name => {
-  let ret = '';
-  if (typeof name === 'string' && name !== '') {
-    let str = '(^| )' + name + '=([^;]*)(;|$)';
-    let reg = new RegExp(str);
-    let m;
-    if ((m = document.cookie.match(reg))) {
-      ret = decodeURIComponent(m[2]);
-    }
-  }
-  return ret;
-};
-
-// 设置cookie,增加到vue实例方便全局调用
-const setCookie = (name, value, days, path) => {
-  let expires = '';
-  if (days) {
-    let date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = '; expires=' + date.toGMTString();
-  }
-  path = path || '/';
-  document.cookie = name + '=' + encodeURIComponent(value) + expires + '; path=' + path;
-};
-
-// 删除cookie
-const delCookie = name => {
-  let exp = new Date();
-  exp.setTime(exp.getTime() - 1);
-  let val = getCookie(name);
-  val && (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
-};
-
 const remTopx = value => {
   let fontSize = getComputedStyle(document.documentElement)['font-size'];
   console.log('当前根元素font-size:px -> :', parseInt(fontSize), '转化后font-size:', (parseInt(fontSize) * value) / 100);
@@ -78,13 +44,10 @@ const remTopx = value => {
 };
 
 const model = {
-  formatDate: formatDate,
-  setLocalStorage: setLocalStorage,
-  getLocalStorage: getLocalStorage,
-  removeLocalStorage: removeLocalStorage,
-  getCookie: getCookie,
-  setCookie: setCookie,
-  delCookie: delCookie,
+  formatDate,
+  setLocalStorage,
+  getLocalStorage,
+  removeLocalStorage,
   remTopx: remTopx
 };
 
