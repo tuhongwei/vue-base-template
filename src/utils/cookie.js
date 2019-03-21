@@ -21,7 +21,8 @@ const setCookie = (name, value, days, path) => {
     expires = '; expires=' + date.toGMTString();
   }
   path = path || '/';
-  document.cookie = name + '=' + encodeURIComponent(value) + expires + '; path=' + path;
+  document.cookie =
+    name + '=' + encodeURIComponent(value) + expires + '; path=' + path;
 };
 
 // 删除cookie
@@ -29,7 +30,8 @@ const delCookie = name => {
   let exp = new Date();
   exp.setTime(exp.getTime() - 1);
   let val = getCookie(name);
-  val && (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
+  val &&
+    (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
 };
 
 const model = {

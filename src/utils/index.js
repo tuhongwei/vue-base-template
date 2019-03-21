@@ -39,7 +39,12 @@ const removeLocalStorage = name => {
 
 const remTopx = value => {
   let fontSize = getComputedStyle(document.documentElement)['font-size'];
-  console.log('当前根元素font-size:px -> :', parseInt(fontSize), '转化后font-size:', (parseInt(fontSize) * value) / 100);
+  console.log(
+    '当前根元素font-size:px -> :',
+    parseInt(fontSize),
+    '转化后font-size:',
+    (parseInt(fontSize) * value) / 100
+  );
   return (parseInt(fontSize) * value) / 100;
 };
 
