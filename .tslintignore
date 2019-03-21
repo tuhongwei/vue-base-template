@@ -1,0 +1,10 @@
+/build/
+/config/
+/doc/
+/dist/
+/specs/
+/*.js
+/test/unit/coverage/
+/src/assets/css/
+/src/assets/less/
+/src/assets/img/
