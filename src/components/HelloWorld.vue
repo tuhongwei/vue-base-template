@@ -30,15 +30,18 @@ h2 {
   font-weight: normal;
   text-align: center;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
   text-align: center;
 }
+
 li {
   display: inline-block;
   margin: 0 0.1rem;
 }
+
 a {
   font-size: 0.14rem;
   color: #42b983;
