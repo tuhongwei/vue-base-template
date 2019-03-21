@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { baseURL, loginURL } from '@/config';
-import cookie from './cookie';
+import { getCookie, delCookie } from './cookie';
 import { Message } from 'element-ui';
 
 const instance = axios.create({
@@ -11,7 +11,7 @@ const instance = axios.create({
 // http请求拦截器
 instance.interceptors.request.use(
   config => {
-    const token = cookie.getCookie('token'); // 获取Cookie
+    const token = getCookie('token'); // 获取Cookie
     // console.log('token',token);
     if (token) {
       config.headers.token = token; // 后台接收的参数,加上token
@@ -28,8 +28,8 @@ instance.interceptors.response.use(
   res => {
     if (!res || !res.data) return;
     if (res.data.code === 401) {
-      cookie.delCookie('token');
-      cookie.delCookie('userInfo');
+      delCookie('token');
+      delCookie('userInfo');
       location.href = loginURL;
     } else if (res.data.code !== 1) {
       Message.error(res.data.msg);
@@ -40,8 +40,8 @@ instance.interceptors.response.use(
   err => {
     console.log('error', err.response);
     if (err.response.data.code === 401) {
-      cookie.delCookie('token');
-      cookie.delCookie('userInfo');
+      delCookie('token');
+      delCookie('userInfo');
       // Message.error(error.response.data.msg);
       location.href = loginURL;
     }

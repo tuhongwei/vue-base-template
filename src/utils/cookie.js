@@ -1,5 +1,5 @@
 // 获取cookie、
-const getCookie = name => {
+export const getCookie = name => {
   let ret = '';
   if (typeof name === 'string' && name !== '') {
     let str = '(^| )' + name + '=([^;]*)(;|$)';
@@ -13,7 +13,7 @@ const getCookie = name => {
 };
 
 // 设置cookie,增加到vue实例方便全局调用
-const setCookie = (name, value, days, path) => {
+export const setCookie = (name, value, days, path) => {
   let expires = '';
   if (days) {
     let date = new Date();
@@ -26,18 +26,10 @@ const setCookie = (name, value, days, path) => {
 };
 
 // 删除cookie
-const delCookie = name => {
+export const delCookie = name => {
   let exp = new Date();
   exp.setTime(exp.getTime() - 1);
   let val = getCookie(name);
   val &&
     (document.cookie = name + '=' + val + '; expires=' + exp.toGMTString());
 };
-
-const model = {
-  getCookie,
-  setCookie,
-  delCookie
-};
-
-export default model;
