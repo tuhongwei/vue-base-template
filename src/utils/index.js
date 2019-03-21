@@ -1,9 +1,9 @@
-const formatNumber = n => {
+export const formatNumber = n => {
   n = n.toString();
   return n[1] ? n : '0' + n;
 };
 
-const formatDate = date => {
+export const formatDate = date => {
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
@@ -13,7 +13,7 @@ const formatDate = date => {
 /**
  * 存储localStorage
  */
-const setLocalStorage = (name, content) => {
+export const setLocalStorage = (name, content) => {
   if (!name) return;
   if (typeof content !== 'string') {
     content = JSON.stringify(content);
@@ -24,7 +24,7 @@ const setLocalStorage = (name, content) => {
 /**
  * 获取localStorage
  */
-const getLocalStorage = name => {
+export const getLocalStorage = name => {
   if (!name) return;
   return localStorage.getItem(name);
 };
@@ -32,12 +32,12 @@ const getLocalStorage = name => {
 /**
  * 删除localStorage
  */
-const removeLocalStorage = name => {
+export const removeLocalStorage = name => {
   if (!name) return;
   localStorage.removeItem(name);
 };
 
-const remTopx = value => {
+export const remTopx = value => {
   let fontSize = getComputedStyle(document.documentElement)['font-size'];
   console.log(
     '当前根元素font-size:px -> :',
@@ -47,13 +47,3 @@ const remTopx = value => {
   );
   return (parseInt(fontSize) * value) / 100;
 };
-
-const model = {
-  formatDate,
-  setLocalStorage,
-  getLocalStorage,
-  removeLocalStorage,
-  remTopx: remTopx
-};
-
-export default model;
