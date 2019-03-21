@@ -27,19 +27,26 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,jsx,vue}": [
+    "**/*.{js,jsx}": [
+      "prettier --write",
       "eslint --fix",
-      "prettier --write",
       "git add"
     ],
-    "**/*.{ts,tsx,vue}": [
+    "**/*.{ts,tsx}": [
+      "prettier --write",
       "tslint --fix",
-      "prettier --write",
       "git add"
     ],
-    "**/*.{css,less,sass,scss,vue}": [
-      "stylelint --fix",
+    "**/*.{css,less,sass,scss}": [
       "prettier --write",
+      "stylelint --fix",
+      "git add"
+    ],
+    "**/*.vue": [
+      "prettier --write",
+      "eslint --fix",
+      "tslint --fix",
+      "stylelint --fix",
       "git add"
     ],
     "**/*.{md,json}": [
