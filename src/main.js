@@ -6,6 +6,7 @@ import router from './router';
 import store from './stores';
 import './global';
 import './interception';
+import './errorCapture'
 
 Vue.config.productionTip = false;
 
