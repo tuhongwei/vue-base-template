@@ -18,6 +18,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return { msg: 'Welcome to Your Vue.js App' };
+  },
+  created () {
+    // console.log(b);
   }
 };
 </script>
