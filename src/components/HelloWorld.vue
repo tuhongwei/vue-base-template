@@ -34,18 +34,16 @@ h1,h2 {
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 li {
-  display: inline-block;
   margin: 0 0.1rem;
+  font-size: 0.14rem;
 }
 
 a {
-  font-size: 0.14rem;
   color: #42b983;
 }
 </style>
