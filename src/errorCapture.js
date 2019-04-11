@@ -2,12 +2,14 @@
 import Vue from 'vue';
 import request from './utils/request';
 
-const sendError = () => {
-  request.post('/middleware/errorMsg', {}).then(res => {});
+const sendError = err => {
+  request.post('/middleware/errorMsg', err).then(res => {
+    console.log(res.data);
+  });
 };
 Vue.config.errorHandler = (err, vm, info) => {
   console.log(err, info);
-  sendError();
+  sendError(err);
 };
 
 window.onerror = function (errorMessage, scriptURI, lineNo, columnNo, error) {
@@ -18,13 +20,14 @@ window.onerror = function (errorMessage, scriptURI, lineNo, columnNo, error) {
   console.log('error: ' + error); // 异常堆栈信息
 
   // 构建错误对象
-  // var errorObj = {
-  //   errorMessage: errorMessage || null,
-  //   scriptURI: scriptURI || null,
-  //   lineNo: lineNo || null,
-  //   columnNo: columnNo || null,
-  //   stack: error && error.stack ? error.stack : null
-  // };
+  let errorObj = {
+    errorMessage: errorMessage || null,
+    scriptURI: scriptURI || null,
+    lineNo: lineNo || null,
+    columnNo: columnNo || null,
+    stack: error && error.stack ? error.stack : null
+  };
+  sendError(errorObj);
 };
 
 // console.log(a);
