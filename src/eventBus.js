@@ -35,7 +35,7 @@ class EventBus {
     let params = args.slice(1);
     if (this.handles[eventName] && this.handles[eventName].length) {
       this.handles[eventName].forEach(callback => {
-        callback && callback(...params);
+        callback(...params);
       });
     }
   }
