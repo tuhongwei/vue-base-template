@@ -41,9 +41,11 @@ module.exports = {
     "vue/jsx-uses-vars": 2,
     // allow async-await
     "generator-star-spacing": "off",
+    // turn no-callback-literal off
+    "standard/no-callback-literal": "off",
     // allow console during development
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
   },
 };
