@@ -5,6 +5,15 @@ module.exports = {
     "postcss-import": {},
     "postcss-url": {},
     // to edit target browsers: use "browserslist" field in package.json
-    autoprefixer: {}
+    autoprefixer: {},
+    "postcss-px-to-viewport": {
+      viewportWidth: 750,
+      viewportHeight: 1334,
+      unitPrecision: 3,
+      viewportUnit: 'vw',
+      selectorBlackList: ['.usepixel', /^\.mint-msgbox/],
+      minPixelValue: 1,
+      mediaQuery: false
+    }
   }
 };

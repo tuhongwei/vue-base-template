@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'Loading',
   data () {
     return { loadingLeafNum: 12 };
   },
