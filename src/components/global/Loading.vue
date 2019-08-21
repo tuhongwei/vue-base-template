@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .lx-load-mark {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
@@ -39,7 +39,7 @@ export default {
 }
 
 .lx-load-box {
-  position: fixed;
+  position: absolute;
   z-index: 3;
   width: 91.2px;
   min-height: 91.2px;
