@@ -1,4 +1,4 @@
-module.exports = {
+{
   "presets": [
     ["env", {
       "modules": false,
@@ -23,4 +23,4 @@ module.exports = {
       "plugins": ["transform-vue-jsx", "istanbul"]
     }
   }
-};
+}
