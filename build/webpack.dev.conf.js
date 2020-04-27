@@ -8,6 +8,7 @@ const baseWebpackConfig = require("./webpack.base.conf");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
+const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
 const portfinder = require("portfinder");
 
 const HOST = process.env.HOST;
@@ -63,6 +64,21 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: "index.html",
       inject: true,
       favicon: "./favicon.ico"
+    }),
+    // inject skeleton content(DOM & CSS) into HTML
+    new SkeletonWebpackPlugin({
+      webpackConfig: require('./webpack.skeleton.conf'),
+      quiet: true,
+      minimize: true,
+      router: {
+        mode: 'history',
+        routes: [
+          {
+            path: '/',
+            skeletonId: 'skeleton2'
+          }
+        ]
+      }
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
