@@ -52,9 +52,9 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: process.env.NODE_ENV === "production" ? false : true,
     // https://webpack.js.org/configuration/devtool/#production
-    devtool: "#source-map",
+    devtool: process.env.NODE_ENV === "production" ? false : "#source-map",
 
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
